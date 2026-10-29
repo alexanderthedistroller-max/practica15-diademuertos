@@ -1,201 +1,1014 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+name="description"
+content="Información sobre el Día de Muertos, sus orígenes, fechas, ofrendas, gastronomía y La Catrina."
+>
+
+<title>Día de Muertos | Tradición mexicana</title>
+
+<style>
+:root {
+--morado: #4b145f;
+--morado-oscuro: #21072c;
+--naranja: #f47c20;
+--amarillo: #ffca28;
+--rosa: #dc3f79;
+--verde: #597718;
+--crema: #fff8e7;
+--papel: #fffdf5;
+--texto: #302331;
+--blanco: #ffffff;
+--sombra: 0 12px 30px rgba(42, 7, 51, 0.16);
+}
+
+* {
+box-sizing: border-box;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+margin: 0;
+color: var(--texto);
+font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+line-height: 1.7;
+background:
+radial-gradient(circle at 10% 20%, rgba(244, 124, 32, 0.12), transparent 22%),
+radial-gradient(circle at 90% 40%, rgba(220, 63, 121, 0.10), transparent 22%),
+var(--crema);
+}
+
+img {
+display: block;
+max-width: 100%;
+}
+
+a {
+color: inherit;
+}
+
+p {
+margin: 0 0 1rem;
+}
+
+h1,
+h2,
+h3 {
+line-height: 1.2;
+}
+
+h2 {
+position: relative;
+margin: 0 0 1.8rem;
+color: var(--morado);
+font-family: Georgia, "Times New Roman", serif;
+font-size: clamp(2rem, 5vw, 3rem);
+text-align: center;
+}
+
+h2::after {
+display: block;
+width: 90px;
+height: 5px;
+margin: 0.7rem auto 0;
+border-radius: 999px;
+background: linear-gradient(
+90deg,
+var(--rosa),
+var(--naranja),
+var(--amarillo)
+);
+content: "";
+}
+
+h3 {
+margin: 0 0 0.8rem;
+color: var(--morado);
+font-size: 1.25rem;
+}
+
+.skip-link {
+position: fixed;
+top: -100px;
+left: 1rem;
+z-index: 1000;
+padding: 0.7rem 1rem;
+color: var(--blanco);
+background: var(--morado);
+border-radius: 0 0 8px 8px;
+}
+
+.skip-link:focus {
+top: 0;
+}
+
+/* Papel picado decorativo */
+.papel-picado {
+display: grid;
+grid-template-columns: repeat(8, 1fr);
+min-height: 55px;
+overflow: hidden;
+background: var(--morado-oscuro);
+}
+
+.papel-picado span {
+position: relative;
+min-height: 48px;
+clip-path: polygon(0 0, 100% 0, 100% 75%, 75% 100%, 50% 75%, 25% 100%, 0 75%);
+}
+
+.papel-picado span:nth-child(4n + 1) {
+background: var(--rosa);
+}
+
+.papel-picado span:nth-child(4n + 2) {
+background: var(--naranja);
+}
+
+.papel-picado span:nth-child(4n + 3) {
+background: var(--amarillo);
+}
+
+.papel-picado span:nth-child(4n) {
+background: #8f2ba8;
+}
+
+header {
+color: var(--blanco);
+background:
+linear-gradient(rgba(33, 7, 44, 0.82), rgba(33, 7, 44, 0.9)),
+url("imagenes/portada-dia-de-muertos.jpg") center/cover;
+}
+
+nav {
+position: sticky;
+top: 0;
+z-index: 100;
+background: rgba(33, 7, 44, 0.96);
+border-bottom: 3px solid var(--naranja);
+backdrop-filter: blur(8px);
+}
+
+.nav-content {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 0.6rem 1.2rem;
+width: min(1180px, 92%);
+margin: auto;
+padding: 0.85rem 0;
+flex-wrap: wrap;
+}
+
+nav a {
+color: var(--blanco);
+font-size: 0.9rem;
+font-weight: 700;
+text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus {
+color: var(--amarillo);
+}
+
+.hero {
+display: grid;
+place-items: center;
+min-height: 560px;
+padding: 5rem 1.2rem;
+text-align: center;
+}
+
+.hero-content {
+max-width: 900px;
+}
+
+.eyebrow {
+display: inline-block;
+margin-bottom: 1rem;
+padding: 0.45rem 1rem;
+color: var(--morado-oscuro);
+background: var(--amarillo);
+border-radius: 999px;
+font-weight: 800;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+}
+
+h1 {
+margin: 0;
+color: var(--blanco);
+font-family: Georgia, "Times New Roman", serif;
+font-size: clamp(3rem, 9vw, 6.8rem);
+text-shadow: 4px 4px 0 rgba(220, 63, 121, 0.75);
+}
+
+.hero p {
+max-width: 720px;
+margin: 1.4rem auto 2rem;
+font-size: clamp(1rem, 2.5vw, 1.3rem);
+}
+
+.button {
+display: inline-block;
+padding: 0.9rem 1.4rem;
+color: var(--morado-oscuro);
+background: linear-gradient(135deg, var(--amarillo), var(--naranja));
+border: 2px solid var(--amarillo);
+border-radius: 999px;
+box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+font-weight: 800;
+text-decoration: none;
+transition: transform 0.2s ease;
+}
+
+.button:hover,
+.button:focus {
+transform: translateY(-3px);
+}
+
+main {
+overflow: hidden;
+}
+
+.section {
+padding: 5rem 1.2rem;
+}
+
+.section-dark {
+color: #fff8e7;
+background:
+radial-gradient(circle at 20% 20%, rgba(220, 63, 121, 0.2), transparent 20%),
+var(--morado-oscuro);
+}
+
+.section-dark h2,
+.section-dark h3 {
+color: var(--amarillo);
+}
+
+.container {
+width: min(1120px, 100%);
+margin: auto;
+}
+
+.intro {
+max-width: 900px;
+margin: auto;
+font-size: 1.1rem;
+text-align: center;
+}
+
+.notice {
+margin-top: 1.5rem;
+padding: 1.2rem 1.4rem;
+background: #fff1c9;
+border-left: 6px solid var(--naranja);
+border-radius: 10px;
+}
+
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+gap: 1.4rem;
+}
+
+.card {
+padding: 1.5rem;
+background: var(--papel);
+border: 1px solid rgba(75, 20, 95, 0.12);
+border-top: 6px solid var(--naranja);
+border-radius: 18px;
+box-shadow: var(--sombra);
+}
+
+.card:nth-child(3n + 2) {
+border-top-color: var(--rosa);
+}
+
+.card:nth-child(3n) {
+border-top-color: var(--amarillo);
+}
+
+.icon {
+display: grid;
+place-items: center;
+width: 54px;
+height: 54px;
+margin-bottom: 1rem;
+background: #ffe9a8;
+border-radius: 50%;
+font-size: 1.7rem;
+}
+
+.timeline {
+position: relative;
+max-width: 850px;
+margin: auto;
+padding-left: 2.2rem;
+}
+
+.timeline::before {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0.65rem;
+width: 4px;
+border-radius: 999px;
+background: linear-gradient(var(--amarillo), var(--naranja), var(--rosa));
+content: "";
+}
+
+.timeline-item {
+position: relative;
+margin-bottom: 1.2rem;
+padding: 1.25rem 1.4rem;
+color: var(--texto);
+background: var(--papel);
+border-radius: 14px;
+box-shadow: var(--sombra);
+}
+
+.timeline-item::before {
+position: absolute;
+top: 1.5rem;
+left: -2.05rem;
+width: 18px;
+height: 18px;
+background: var(--amarillo);
+border: 4px solid var(--morado);
+border-radius: 50%;
+content: "";
+}
+
+.date {
+display: inline-block;
+margin-bottom: 0.4rem;
+color: var(--rosa);
+font-weight: 900;
+}
+
+.altar-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
+gap: 1rem;
+}
+
+.altar-item {
+padding: 1.2rem;
+background: var(--papel);
+border-left: 5px solid var(--naranja);
+border-radius: 12px;
+box-shadow: 0 7px 18px rgba(42, 7, 51, 0.1);
+}
+
+.altar-item strong {
+display: block;
+margin-bottom: 0.3rem;
+color: var(--morado);
+}
+
+.food-card {
+position: relative;
+overflow: hidden;
+}
+
+.food-card::after {
+position: absolute;
+right: -18px;
+bottom: -35px;
+color: rgba(244, 124, 32, 0.12);
+font-size: 7rem;
+content: "✿";
+}
+
+.gallery {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 1rem;
+margin-top: 2rem;
+}
+
+.gallery figure {
+margin: 0;
+overflow: hidden;
+background: var(--papel);
+border: 6px solid var(--papel);
+border-radius: 16px;
+box-shadow: var(--sombra);
+}
+
+.gallery img {
+width: 100%;
+height: 290px;
+object-fit: cover;
+transition: transform 0.35s ease;
+}
+
+.gallery figure:hover img {
+transform: scale(1.05);
+}
+
+.gallery figcaption {
+padding: 0.8rem;
+color: var(--morado);
+font-weight: 700;
+text-align: center;
+}
+
+.poem {
+max-width: 650px;
+margin: auto;
+padding: 2.5rem;
+color: var(--morado-oscuro);
+background:
+linear-gradient(rgba(255, 253, 245, 0.94), rgba(255, 253, 245, 0.94)),
+repeating-linear-gradient(
+0deg,
+transparent,
+transparent 28px,
+rgba(75, 20, 95, 0.1) 29px
+);
+border: 3px solid var(--naranja);
+border-radius: 20px;
+box-shadow: var(--sombra);
+font-family: Georgia, "Times New Roman", serif;
+font-size: 1.15rem;
+text-align: center;
+}
+
+.catrina-layout {
+display: grid;
+grid-template-columns: minmax(260px, 0.8fr) 1.2fr;
+gap: 2rem;
+align-items: center;
+}
+
+.catrina-layout img {
+width: 100%;
+max-height: 620px;
+object-fit: cover;
+border: 8px solid var(--amarillo);
+border-radius: 50% 50% 20px 20px;
+box-shadow: var(--sombra);
+}
+
+.catrina-list {
+padding-left: 1.2rem;
+}
+
+.catrina-list li {
+margin-bottom: 0.8rem;
+}
+
+footer {
+padding: 2.5rem 1.2rem;
+color: var(--blanco);
+background: var(--morado-oscuro);
+border-top: 5px solid var(--naranja);
+text-align: center;
+}
+
+footer p {
+margin: 0.25rem;
+}
+
+@media (max-width: 800px) {
+.hero {
+min-height: 480px;
+}
+
+.catrina-layout {
+grid-template-columns: 1fr;
+}
+
+.catrina-layout img {
+max-width: 500px;
+margin: auto;
+}
+
+.gallery {
+grid-template-columns: 1fr;
+}
+
+.gallery img {
+height: 260px;
+}
+}
+
+@media (max-width: 520px) {
+.papel-picado {
+grid-template-columns: repeat(4, 1fr);
+}
+
+.papel-picado span:nth-child(n + 5) {
+display: none;
+}
+
+.section {
+padding: 3.5rem 1rem;
+}
+
+.nav-content {
+justify-content: flex-start;
+flex-wrap: nowrap;
+overflow-x: auto;
+}
+
+.nav-content a {
+white-space: nowrap;
+}
+
+.poem {
+padding: 1.5rem 1rem;
+}
+}
+</style>
 </head>
+
 <body>
-    <h1>¿Que es el dia de muertos?</h1>
-    El Día de Muertos es una de las tradiciones más representativas de México <br>
-    (declarada Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO en 2008). <br>
-    Se celebra principalmente los días 1 y 2 de noviembre y consiste en un encuentro festivo y simbólico en el que los vivos recuerdan<br> 
-    y honran la memoria de sus seres queridos fallecidos.  <br>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-<h2>significado de la celebración</h2>
-A diferencia de otras culturas donde la muerte se percibe con luto, dolor o temor, <br>
-en el Día de Muertos la muerte se entiende como una etapa natural del ciclo de la vida.  <br>
-El regreso de las ánimas: Existe la creencia de que en estas fechas las almas de los difuntos <br>
-reciben permiso para regresar al mundo terrenal a visitar a sus familias, convivir con ellas y <br>
-nutrirse de la esencia de los alimentos y ofrendas que se les preparan.  <br>
-Fiesta de la memoria: El significado de la festividad no es llorar la ausencia, sino celebrar la vida que tuvieron, <br>
-mantener vivo su recuerdo y asegurar que sigan formando parte de la comunidad familiar.<br>
+<div class="papel-picado" aria-hidden="true">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
 
-  <h3>Importancia social y comunitaria</h3>
-El Día de Muertos fortalece la cohesión familiar, fomenta la memoria colectiva y preserva tradiciones locales.<br>
- En lugares como Chimalhuacán, es común ver altares comunitarios, visitas<br>
- al panteón y actividades culturales que refuerzan el sentido de pertenencia.<br>
+<header id="inicio">
+<nav aria-label="Navegación principal">
+<div class="nav-content">
+<a href="#inicio">Inicio</a>
+<a href="#significado">Significado</a>
+<a href="#fechas">Fechas</a>
+<a href="#ofrenda">Ofrenda</a>
+<a href="#gastronomia">Gastronomía</a>
+<a href="#historia">Historia</a>
+<a href="#catrina">La Catrina</a>
+</div>
+</nav>
 
+<div class="hero">
+<div class="hero-content">
+<span class="eyebrow">Tradición, memoria y vida</span>
+<h1>Día de Muertos</h1>
 
-<h3>cultura</h3>
-Las culturas mexicas, mayas, purépechas y toltecas ya realizaban rituales para honrar a los muertos, con ofrendas, alimentos y objetos<br>
- que acompañaban al alma en su viaje al más allá Concepto<br>
-Estas civilizaciones concebían la muerte como parte de un ciclo natural, no como un final definitivo. El destino del <br>
-alma dependía del tipo de muerte, y se realizaban ceremonias para guiarla hacia lugares como el Mictlán o el Tlalocan<br>
+<p>
+Una celebración mexicana que honra a quienes han partido y mantiene
+vivo su recuerdo mediante altares, flores, aromas, sabores y reuniones
+familiares.
+</p>
 
-<h3>fechas en que se conmemora</h3>
-27 de octubre — Mascotas fallecidas<br>
-Se reciben las almas de los animales de compañía que han partido <br>
+<a class="button" href="#significado">Conocer la tradición</a>
+</div>
+</div>
+</header>
 
-28 de octubre — Muertes trágicas<br>
-Personas fallecidas en accidentes o hechos violentos <br>
+<main id="contenido">
+<section class="section" id="significado">
+<div class="container">
+<h2>¿Qué es el Día de Muertos?</h2>
 
-29 de octubre — Almas olvidadas / muertes naturales / ahogados<br>
-Aquí las fuentes difieren:<br>
-“Almas olvidadas” sin ofrenda <br>
+<div class="intro">
+<p>
+El Día de Muertos es una de las tradiciones más representativas de
+México. Se conmemora principalmente los días 1 y 2 de noviembre y
+consiste en un encuentro festivo y simbólico en el que los vivos
+recuerdan y honran la memoria de sus seres queridos fallecidos.
+</p>
 
-Personas fallecidas por causas naturales <br>
+<p>
+En esta celebración, la muerte se entiende como una etapa natural
+del ciclo de la vida. Según la tradición, las almas regresan para
+visitar a sus familias y disfrutar la esencia de los alimentos y
+ofrendas preparados en su honor.
+</p>
 
-Personas que murieron ahogadas <br>
+<aside class="notice">
+En 2008, la UNESCO inscribió la festividad indígena dedicada a los
+muertos en la Lista Representativa del Patrimonio Cultural
+Inmaterial de la Humanidad.
+</aside>
+</div>
 
-Todas estas interpretaciones forman parte de variaciones regionales.<br>
-30 de octubre — Limbo o almas sin familia<br>
-Niños fallecidos sin bautizo (“limbos”) según algunas tradiciones <br>
+<div class="grid" style="margin-top: 2rem;">
+<article class="card">
+<div class="icon" aria-hidden="true">🕯️</div>
+<h3>El regreso de las ánimas</h3>
+<p>
+Se cree que las almas reciben permiso para regresar al mundo
+terrenal, visitar a sus familias y convivir simbólicamente con ellas.
+</p>
+</article>
 
-Almas olvidadas sin familia según otras regiones <br>
+<article class="card">
+<div class="icon" aria-hidden="true">💀</div>
+<h3>Fiesta de la memoria</h3>
+<p>
+La festividad no busca solamente llorar la ausencia, sino celebrar
+la vida de quienes partieron y conservar su recuerdo.
+</p>
+</article>
 
-31 de octubre — Niños no bautizados y bebés que no nacieron<br>
-Día dedicado a infantes que no fueron bautizados y bebés que no pudieron nacer <br>
+<article class="card">
+<div class="icon" aria-hidden="true">🌼</div>
+<h3>Importancia comunitaria</h3>
+<p>
+Fortalece los vínculos familiares, preserva las tradiciones locales
+y fomenta la memoria colectiva de cada comunidad.
+</p>
+</article>
+</div>
+</div>
+</section>
 
-1 de noviembre — Día de Todos los Santos<br>
-Se reciben las almas de los niños fallecidos que sí fueron bautizados <br>
+<section class="section section-dark" id="fechas">
+<div class="container">
+<h2>Fechas de conmemoración</h2>
 
+<div class="timeline">
+<article class="timeline-item">
+<span class="date">27 de octubre</span>
+<h3>Mascotas fallecidas</h3>
+<p>
+Algunas familias recuerdan a los animales de compañía que han
+formado parte de su hogar.
+</p>
+</article>
 
-2 de noviembre — Día de los Fieles Difuntos / Día de Muertos<br>
-Día dedicado a los adultos fallecidos<br>
+<article class="timeline-item">
+<span class="date">28 de octubre</span>
+<h3>Muertes trágicas</h3>
+<p>
+En ciertas tradiciones se recuerda a las personas fallecidas en
+accidentes o circunstancias violentas.
+</p>
+</article>
 
- <br>
-<h4>Elementos de la ofrenda y su significado</h4>
-Cada elemento de la ofrenda tiene un significado simbólico que guía, purifica y honra a los difuntos durante su visita al mundo de los vivos.<br>
-Elementos principales y su simbolismo.<br>
+<article class="timeline-item">
+<span class="date">29 y 30 de octubre</span>
+<h3>Variaciones regionales</h3>
+<p>
+Las costumbres varían entre comunidades. Algunas recuerdan a las
+almas olvidadas, a quienes no tienen familia o a quienes murieron
+de determinadas maneras.
+</p>
+</article>
 
-Fotografía del difunto: Colocada en el centro del altar, personaliza la ofrenda y representa al ser querido homenajeado, guiando su visita espiritual<br> 
+<article class="timeline-item">
+<span class="date">31 de octubre</span>
+<h3>Infantes</h3>
+<p>
+Algunas tradiciones dedican esta fecha a niños no bautizados y a
+bebés que no llegaron a nacer.
+</p>
+</article>
 
-Velas y veladoras: La luz simboliza la fe, la esperanza y sirve de guía para que las almas encuentren el camino de regreso al hogar. Se colocan tantas como difuntos se homenajean<br> 
+<article class="timeline-item">
+<span class="date">1 de noviembre</span>
+<h3>Día de Todos los Santos</h3>
+<p>
+Generalmente se dedica al recuerdo de niñas y niños fallecidos,
+también llamados angelitos.
+</p>
+</article>
 
-Flores de cempasúchil: Su color naranja intenso y aroma característico representan el sol y la vida, y sus pétalos marcan el camino para que los difuntos lleguen al altar<br> 
+<article class="timeline-item">
+<span class="date">2 de noviembre</span>
+<h3>Día de los Fieles Difuntos</h3>
+<p>
+Es la fecha tradicionalmente dedicada a recordar a las personas
+adultas fallecidas.
+</p>
+</article>
+</div>
 
-Sal: Representa la pureza y la preservación del cuerpo durante el viaje de ida y vuelta de las almas, funcionando como elemento de purificación<br> 
+<aside class="notice">
+Las fechas anteriores al 1 y 2 de noviembre no constituyen un
+calendario único para todo México. Son costumbres familiares o
+regionales y pueden cambiar según la localidad.
+</aside>
+</div>
+</section>
 
-Agua: Se ofrece para calmar la sed de los espíritus tras su largo recorrido y simboliza la vida y la purificación del alma<br> 
+<section class="section" id="ofrenda">
+<div class="container">
+<h2>Elementos de la ofrenda</h2>
 
-Calaveritas de azúcar o chocolate: Representan la muerte y la ciclicidad de la vida, recordando la tradición prehispánica de honrar a los difuntos<br> 
+<p class="intro">
+Cada elemento posee un significado simbólico y ayuda a recibir,
+orientar y honrar a los difuntos durante su visita.
+</p>
 
-Pan de muerto: Simboliza la fraternidad y el afecto hacia los seres queridos que han partido, además de ser un alimento que los difuntos disfrutaban en vida<br> 
+<div class="altar-grid" style="margin-top: 2rem;">
+<article class="altar-item">
+<strong>Fotografía</strong>
+Representa a la persona homenajeada y personaliza el altar.
+</article>
 
-Papel picado: Representa el viento y la fragilidad de la vida, además de aportar colorido y alegría al altar<br> 
+<article class="altar-item">
+<strong>Velas y veladoras</strong>
+Su luz representa la fe y sirve como guía para las almas.
+</article>
 
-Copal o incienso: Su humo purifica el ambiente, ahuyenta los malos espíritus y simboliza el puente entre el cielo y la tierra<br> 
+<article class="altar-item">
+<strong>Flor de cempasúchil</strong>
+Su color y aroma ayudan a marcar el camino hacia la ofrenda.
+</article>
 
-Comida y bebida: Se colocan los platillos y bebidas favoritas del difunto como muestra de cariño y para que disfruten durante su visita<br> 
+<article class="altar-item">
+<strong>Agua</strong>
+Se ofrece para calmar la sed después del largo recorrido.
+</article>
 
-Mantel blanco: Representa la pureza y sirve como base para todos los elementos del altar<br> 
+<article class="altar-item">
+<strong>Sal</strong>
+Se relaciona con la purificación y la preservación.
+</article>
 
-Cada uno de estos elementos no solo decora el altar, sino que cumple una función espiritual y simbólica, reforzando el vínculo entre los vivos y los muertos<br>
+<article class="altar-item">
+<strong>Pan de muerto</strong>
+Representa la fraternidad, el afecto y el acto de compartir.
+</article>
 
-<h5>Gastronomia tradicional</h5>
-La gastronomía del Día de Muertos incluye platillos emblemáticos como pan de muerto, tamales, mole, calabaza en tacha, atole y pozole, todos colocados en las ofrendas para honrar<br> a los difuntos.
-Principales alimentos tradicionales
-La comida en esta festividad tiene un profundo sentido simbólico y espiritual, pues se prepara para compartir con las almas que regresan.<br> 
+<article class="altar-item">
+<strong>Papel picado</strong>
+Representa el viento, la alegría y la fragilidad de la vida.
+</article>
 
-Pan de muerto<br>
-Es el alimento más representativo.<br>
-Su forma simboliza el ciclo de la vida y la muerte.<br>
-Se elabora con azahar, anís, naranja y azúcar.<br> 
+<article class="altar-item">
+<strong>Copal o incienso</strong>
+Su aroma purifica el ambiente y crea un espacio ceremonial.
+</article>
 
-Tamales<br>
-Platillo festivo y social, presente en ofrendas y reuniones.<br>
-Variedades: colados (Yucatán), oaxaqueños (hoja de plátano) y tradicionales (hoja de maíz).<br> 
+<article class="altar-item">
+<strong>Comida y bebida</strong>
+Se colocan los platillos favoritos de la persona recordada.
+</article>
 
-Mole<br>
-Salsa compleja con chiles, especias y chocolate.<br>
-El mole negro de Oaxaca es el más tradicional para estas fechas.<br> 
+<article class="altar-item">
+<strong>Calaveritas</strong>
+Recuerdan de manera festiva la presencia inevitable de la muerte.
+</article>
 
-Calabaza en tacha<br>
-Dulce preparado con calabaza de Castilla, piloncillo, canela y guayaba.<br>
-Común en ofrendas y servido en barro.<br> 
+<article class="altar-item">
+<strong>Mantel blanco</strong>
+Simboliza la pureza y sirve como base para la ofrenda.
+</article>
+</div>
 
-Atole<br>
-Bebida de masa de maíz con agua, canela y piloncillo.<br>
-Puede incluir frutas como fresa o guayaba<br>. 
+<div class="gallery">
+<figure>
+<img
+src="imagenes/2do-altar.jpeg"
+alt="Altar de Día de Muertos decorado con flores y veladoras"
+loading="lazy"
+>
+<figcaption>Altar tradicional</figcaption>
+</figure>
 
-Pozole<br>
-Caldo de maíz con carne de pollo o cerdo.<br>
-Puede ser verde, blanco o rojo.<br> 
+<figure>
+<img
+src="imagenes/3ra-imagen.jpg"
+alt="Ofrenda con alimentos, fotografías y flores de cempasúchil"
+loading="lazy"
+>
+<figcaption>Elementos de la ofrenda</figcaption>
+</figure>
 
-Dulces de alfeñique y calaveras de azúcar<br>
-Dulces tradicionales usados para decorar y endulzar la ofrenda.<br>
-Las calaveras llevan betún de colores y el nombre del difunto.<br> 
+<figure>
+<img
+src="imagenes/cempasuchil.jpg"
+alt="Flores anaranjadas de cempasúchil"
+loading="lazy"
+>
+<figcaption>Flor de cempasúchil</figcaption>
+</figure>
+</div>
+</div>
+</section>
 
-Significado cultural<br>
-La comida funciona como un puente simbólico entre vivos y muertos, recreando un ambiente familiar y recordando los gustos de quienes ya no están.<br> 
+<section class="section section-dark" id="gastronomia">
+<div class="container">
+<h2>Gastronomía tradicional</h2>
 
-Otros platillos frecuentes<br>
-Según diversas fuentes gastronómicas, también se incluyen:<br>
+<p class="intro">
+La comida funciona como un puente simbólico entre vivos y muertos. En
+la ofrenda se colocan alimentos representativos y los platillos que
+disfrutaba la persona homenajeada.
+</p>
 
-Arroz con leche<br>
-Enchiladas y guisos caseros<br>
-Frutas de temporada<br>
+<div class="grid" style="margin-top: 2rem;">
+<article class="card food-card">
+<h3>Pan de muerto</h3>
+<p>
+Es uno de los alimentos más representativos. Existen numerosas
+variedades regionales y puede prepararse con azahar, naranja,
+anís o azúcar.
+</p>
+</article>
 
-La gastronomía del Día de Muertos es un elemento esencial de la tradición mexicana, donde cada platillo honra la memoria y celebra la vida compartida.<br>
+<article class="card food-card">
+<h3>Tamales</h3>
+<p>
+Son un alimento festivo y comunitario. Pueden envolverse en hoja
+de maíz o de plátano, según la región.
+</p>
+</article>
 
-src <img src="imagenes/2do altar.jpeg">
-src <img src="imagenes/3ra imagen.jpg">
+<article class="card food-card">
+<h3>Mole</h3>
+<p>
+Combina chiles, especias y otros ingredientes. El mole negro es
+especialmente representativo de Oaxaca.
+</p>
+</article>
 
-<h3>historia y origen</h3>
-La historia de las ofrendas se remonta a las primeras civilizaciones, donde se consideraba que <br>
-las ofrendas eran una forma de expresar gratitud y agradecimiento hacia los dioses o espíritus protectores.<br>
-Estas ofrendas podían incluir alimentos, animales sacrificados, objetos personales y otros elementos que los<br>
-antiguos creían que atraerían la bendición y la prosperidad. A medida que las culturas evolucionaron, las ofrendas<br>
-se adaptaron y se transformaron, incorporando rituales y creencias de diferentes sociedades. La práctica<br>
- de las ofrendas ha perdurado a lo largo de la historia, siendo una parte integral de muchas tradiciones religiosas y culturales. <br>
-<br>
-<h3>raices historicas</h3>
-Las ofrendas tienen sus raíces en las civilizaciones prehistóricas y antiguas, donde se realizaban rituales y ofrendas<br>
-a dioses y espíritus protectores. Estas ofrendas eran parte de rituales de fertilidad y abundancia, buscando asegurar buenas<br>
-cosechas y la prosperidad de la comunidad. Con el tiempo, las ofrendas evolucionaron y se adaptaron a las creencias y prácticas<br>
-religiosas de cada cultura.<br>
-<br>
-<h3>influencias culturales</h3>
-Las ofrendas han sido influenciadas por diversas culturas a lo largo de la historia. En el contexto del Día de Muertos<br>
-en México, las ofrendas son un homenaje a los difuntos y una manera de mantener vivo su recuerdo. Estas ofrendas incluyen<br>
-elementos como el pan de muerto, flores de cempasúchil, velas, incienso, agua, sal, y calaveras de dulce, cada uno con su<br>
-propio significado y propósito. La ofrenda de Día de Muertos es un homenaje a las personas fallecidas y una manera de mantener<br>
-vivo su recuerdo. <br>
-<br>
-<h3>evolucion del dia de muertos</h3>
+<article class="card food-card">
+<h3>Calabaza en tacha</h3>
+<p>
+Dulce elaborado tradicionalmente con calabaza de Castilla,
+piloncillo y canela.
+</p>
+</article>
 
-El Día de Muertos evolucionó desde rituales prehispánicos mesoamericanos dedicados al viaje del alma al Mictlán, se transformó<br>
-con la llegada del catolicismo en los siglos XVI–XVII y, desde el siglo XX, se consolidó como símbolo cultural mexicano reconocido<br>
-por la UNESCO en 2008.<br>
+<article class="card food-card">
+<h3>Atole</h3>
+<p>
+Bebida caliente preparada con masa de maíz o fécula. Puede tener
+sabores como guayaba, fresa, chocolate o vainilla.
+</p>
+</article>
 
-<h3>calaberita literaria</h3>
+<article class="card food-card">
+<h3>Pozole</h3>
+<p>
+Caldo elaborado con maíz cacahuazintle y carne. Sus versiones más
+conocidas son blanca, roja y verde.
+</p>
+</article>
+
+<article class="card food-card">
+<h3>Alfeñiques y calaveritas</h3>
+<p>
+Dulces decorativos de azúcar que suelen llevar colores y nombres
+escritos con betún.
+</p>
+</article>
+
+<article class="card food-card">
+<h3>Otros alimentos</h3>
+<p>
+También pueden incluirse arroz con leche, frutas de temporada,
+enchiladas y diversos guisos familiares.
+</p>
+</article>
+</div>
+</div>
+</section>
+
+<section class="section" id="historia">
+<div class="container">
+<h2>Historia y origen</h2>
+
+<div class="grid">
+<article class="card">
+<h3>Raíces mesoamericanas</h3>
+<p>
+Diversos pueblos mesoamericanos realizaban ceremonias para
+recordar a sus muertos. La muerte se concebía como parte de un
+ciclo y no solamente como un final definitivo.
+</p>
+</article>
+
+<article class="card">
+<h3>Influencia colonial</h3>
+<p>
+Después de la llegada de los españoles, las prácticas indígenas
+se relacionaron con las conmemoraciones católicas de Todos los
+Santos y los Fieles Difuntos.
+</p>
+</article>
+
+<article class="card">
+<h3>Evolución cultural</h3>
+<p>
+La celebración actual es resultado de procesos históricos y de
+tradiciones regionales que continúan transformándose con el
+tiempo.
+</p>
+</article>
+</div>
+
+<aside class="notice">
+No existe un solo origen idéntico para todas las comunidades. El Día
+de Muertos reúne influencias indígenas, católicas, familiares y
+regionales.
+</aside>
+</div>
+</section>
+
+<section class="section section-dark" id="calaverita">
+<div class="container">
+<h2>Calaverita literaria</h2>
+
+<div class="poem">
+<p>
 La flaca llegó cantando,<br>
 buscando a quien conversar;<br>
 te encontró siempre soñando<br>
-y te quiso saludar. <br>
+y te quiso saludar.
+</p>
 
-—“Ven conmigo un ratito,<br>
-que traigo pan y café”—;<br>
+<p>
+"Ven conmigo un ratito,<br>
+que traigo pan y café";<br>
 pero tú, muy tranquilito,<br>
-le dijiste: “¡Otro día, eh!” <br>
+le dijiste: "¡Otro día, eh!"
+</p>
 
+<p>
 La huesuda, divertida,<br>
 se sentó junto a tu mesa;<br>
-“Si no vienes en tu vida,<br>
-¡te llevo aunque te dé pereza!”<br>
+"Si no vienes en tu vida,<br>
+¡te llevo aunque te dé pereza!"
+</p>
 
+<p>
 Y cuentan que en la vereda<br>
 la flaquita se quedó,<br>
 pues al ver tu gran flojera<br>
-¡hasta ella se arrepintió!<br>
+¡hasta ella se arrepintió!
+</p>
+</div>
+</div>
+</section>
 
-src <img src="la-catrina-historia-y-origen_0_0_1200_747.jpg">
+<section class="section" id="catrina">
+<div class="container">
+<h2>La Catrina</h2>
 
+<div class="catrina-layout">
+<img
+src="imagenes/la-catrina.jpg"
+alt="Representación de La Catrina con sombrero elegante"
+loading="lazy"
+>
 
+<div>
+<h3>Origen y significado</h3>
 
+<p>
+La figura que hoy conocemos como La Catrina se originó en
+<em>La Calavera Garbancera</em>, obra del grabador mexicano José
+Guadalupe Posada. Era una crítica satírica hacia quienes
+rechazaban sus raíces indígenas para aparentar una identidad
+europea.
+</p>
 
+<p>
+Diego Rivera la representó vestida de cuerpo entero en el mural
+<em>Sueño de una tarde dominical en la Alameda Central</em>,
+realizado entre 1947 y 1948, y ayudó a popularizar el nombre de
+La Catrina.
+</p>
 
+<p>
+Actualmente simboliza la igualdad ante la muerte y forma parte
+del arte, los desfiles, el maquillaje y las celebraciones del
+Día de Muertos.
+</p>
 
+<h3>Representaciones populares</h3>
+
+<ul class="catrina-list">
+<li><strong>Obra de Posada:</strong> calavera con un sombrero elegante.</li>
+<li><strong>Mural de Rivera:</strong> figura de cuerpo entero con vestimenta distinguida.</li>
+<li><strong>Arte moderno:</strong> pinturas, esculturas, murales y artesanías.</li>
+<li><strong>Maquillaje:</strong> diseños inspirados en calaveras y flores.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<p><strong>Día de Muertos</strong></p>
+<p>Tradición, memoria e identidad mexicana.</p>
+<p>&copy; 2026 Cultura Mexicana</p>
+</footer>
 </body>
 </html>
